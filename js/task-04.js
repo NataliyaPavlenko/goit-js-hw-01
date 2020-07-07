@@ -1,5 +1,3 @@
-"use strict";
-
 let credits = 23580;
 const pricePerDroid = 3000;
 let totalPrice = 0;
@@ -14,7 +12,7 @@ if (numberOfDroids === null) {
 } else {
   credits -= totalPrice;
   console.log(
-    `Вы купили ${numberOfDroids} дроидов, на счету осталось ${credits} кредитов.`
+    `Вы купили ${+numberOfDroids} дроидов, на счету осталось ${credits} кредитов.`
   );
   console.log(totalPrice);
 }
