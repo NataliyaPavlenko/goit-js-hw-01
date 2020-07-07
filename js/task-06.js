@@ -1,22 +1,20 @@
 let total = 0;
+let input;
 
 do {
-  let input = prompt("Введите число");
+  input = prompt("Введите число");
 
-  if (input === null) {
-    break;
+  if (input !== null) {
+    let number = Number(input);
+    if (isNaN(number)) {
+      console.log("Было введено не число, попробуйте еще раз");
+      continue;
+    }
+
+    total += number;
   }
-
-  input = Number(input);
-
-  const notANumber = Number.isNaN(input);
-
-  if (notANumber) {
-    console.log("Было введено не число, попробуйте еще раз");
-    continue;
-  }
-
-  total += input;
-} while (true);
+} while (input !== null);
 
 console.log(`Общая сумма ${total}`);
+
+/*(+input) - не работало*/
