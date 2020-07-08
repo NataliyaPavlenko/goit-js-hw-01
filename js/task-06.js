@@ -5,16 +5,14 @@ do {
   input = prompt("Введите число");
 
   if (input !== null) {
-    let number = Number(input);
-    if (isNaN(number)) {
-      console.log("Было введено не число, попробуйте еще раз");
+    input = Number(input);
+
+    if (Number.isNaN(+input)) {
+      alert("Было введено не число, попробуйте еще раз");
       continue;
     }
-
-    total += number;
+    total += input;
   }
 } while (input !== null);
 
-console.log(`Общая сумма ${total}`);
-
-/*(+input) - не работало*/
+alert(`Общая сумма ${total}`);

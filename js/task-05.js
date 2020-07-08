@@ -1,44 +1,46 @@
-let message;
-let price;
-let normalizedInput;
-let country = prompt("Введите название страны");
+const country = prompt("Введите название страны");
+
+const china = "китай";
+const chile = "чили";
+const australia = "австралия";
+const india = "индия";
+const jamaica = "ямайка";
+
+const chinaDeliveryCost = 100;
+const chileDeliveryCost = 250;
+const australiaDeliveryCost = 170;
+const indiaDeliveryCost = 80;
+const jamaicaDeliveryCost = 120;
 
 if (country === null) {
-  price = "canceled";
-} else if (country === "") {
-  price = "not entered";
+  alert("Отменено пользователем!");
 } else {
-  normalizedInput = country[0].toUpperCase() + country.slice(1).toLowerCase();
-
-  switch (normalizedInput) {
-    case "Китай":
-      price = 100;
-      message = `Доставка в ${normalizedInput} будет стоить ${price} кредитов`;
+  switch (country.toLowerCase()) {
+    case "китай":
+      alert(`Доставка в ${china} будет стоить ${chinaDeliveryCost} кредитов`);
       break;
 
-    case "Чили":
-      price = 250;
-      message = `Доставка в ${normalizedInput} будет стоить ${price} кредитов`;
+    case "чили":
+      alert(`Доставка в ${chile} будет стоить ${chileDeliveryCost} кредитов`);
       break;
 
-    case "Австралия":
-      price = 170;
-      message = `Доставка в ${normalizedInput} будет стоить ${price} кредитов`;
+    case "австралия":
+      alert(
+        `Доставка в ${australia} будет стоить ${australiaDeliveryCost} кредитов`
+      );
       break;
 
-    case "Индия":
-      price = 80;
-      message = `Доставка в ${normalizedInput} будет стоить ${price} кредитов`;
+    case "индия":
+      alert(`Доставка в ${india} будет стоить ${indiaDeliveryCost} кредитов`);
       break;
 
-    case "Ямайка":
-      price = 120;
-      message = `Доставка в ${normalizedInput} будет стоить ${price} кредитов`;
+    case "ямайка":
+      alert(
+        `Доставка в ${jamaica} будет стоить ${jamaicaDeliveryCost} кредитов`
+      );
       break;
 
     default:
-      message = "В вашей стране доставка не доступна";
+      alert("В вашей стране доставка не доступна");
   }
 }
-
-alert(message);
